@@ -1,0 +1,21 @@
+name: Parity Tests
+
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Use Node.js 24.x # Matching local environment
+      uses: actions/setup-node@v4
+      with:
+        node-version: 24.x
+
+    - name: Run Parity Test
+      run: node --experimental-strip-types compare.test.ts

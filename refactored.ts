@@ -52,7 +52,7 @@ const RENTAL_RULES = {
 /**
  * Simple helper for "Base + Extra" pricing logic.
  */
-const calcThresholdAmount = (days: number, { baseAmount, thresholdDays, extraRate }: { baseAmount: number, thresholdDays: number, extraRate: number }) => 
+const calcThresholdAmount = (days: number, { baseAmount, thresholdDays, extraRate }: { baseAmount: number, thresholdDays: number, extraRate: number }) =>
   days > thresholdDays ? baseAmount + (days - thresholdDays) * extraRate : baseAmount;
 
 /**

@@ -17,10 +17,24 @@ I didn't just move things around; I fixed a few hidden bugs that were in the ori
 
 Since both the old and new code are here, I've included a test to make sure they still give the **exact same results**. This is to prove that my cleanup didn't change how much customers are charged.
 
-To run the test, use this command in your terminal:
+### 1. Run it locally
+Use this command in your terminal:
 
 ```bash
 node --experimental-strip-types compare.test.ts
 ```
 
-This will run several scenarios (like long rentals and new releases) and confirm that both files agree on the final bill.
+---
+
+## Running on GitHub (CI/CD)
+
+I've also set up an automatic tester on GitHub. This will run every time you push code to the `main` branch.
+
+### How to run it manually:
+If you want to trigger the tests yourself without pushing code:
+1.  Go to your project on **GitHub**.
+2.  Click on the **"Actions"** tab at the top.
+3.  On the left, select **"Parity Tests"**.
+4.  Click the **"Run workflow"** button on the right and select the `main` branch.
+
+This is a great way to double-check everything is working perfectly in a clean environment!
